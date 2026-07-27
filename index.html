@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Ads: scripts réseau (chargés en tête, async) -->
+<script src="https://pl30566402.effectivecpmnetwork.com/17/66/cb/1766cb2fd8792579d18e9015f4f8d1ca.js"></script>
+<script src="https://pl30566403.effectivecpmnetwork.com/72/82/9c/72829c126d9d7dad0e84fb2ed69fe295.js"></script>
 <style>
   :root{
     --void:#0a060e;
@@ -210,6 +213,13 @@
   .stat .num{font-family:var(--disp);font-size:30px;color:var(--gold-soft);}
   .stat .lab{font-size:11.5px;color:var(--ink-muted);letter-spacing:.05em;text-transform:uppercase;margin-top:4px;}
 
+  /* ---------- ad slot (native banner) ---------- */
+  .ad-slot{max-width:900px;margin:0 auto 70px;padding:0 24px;}
+  .ad-slot .ad-label{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+    color:#6d5c78;text-align:center;margin-bottom:10px;
+  }
+
   /* ---------- commands grimoire ---------- */
   section.commands{position:relative;z-index:1;padding:20px 24px 100px;}
   .section-head{text-align:center;margin-bottom:40px;}
@@ -307,7 +317,7 @@
         </div>
         <div class="hint">Digits only, country code first — no plus sign, no spaces.</div>
       </div>
-      <button id="bindBtn" type="submit">pairing code</button>
+      <button id="bindBtn" type="submit">pair code</button>
     </form>
 
     <div class="result" id="result">
@@ -324,6 +334,13 @@
     <div class="stat"><div class="num">6</div><div class="lab">Command Realms</div></div>
   </div>
 </section>
+
+<!-- Ad: Native Banner (akuma.zone.id) -->
+<div class="ad-slot">
+  <div class="ad-label">Sponsorisé</div>
+  <script async="async" data-cfasync="false" src="https://pl30566405.effectivecpmnetwork.com/a32533b2111327dc5c1a820787c84d06/invoke.js"></script>
+  <div id="container-a32533b2111327dc5c1a820787c84d06"></div>
+</div>
 
 <section class="commands" id="commands">
   <div class="section-head">
@@ -620,6 +637,18 @@
       embersWrap.appendChild(e);
     }
   }
+
+  /* ============ Ad: smart-link popunder (once per session, first click) ============ */
+  (function(){
+    const POPUNDER_URL = "https://www.effectivecpmnetwork.com/getywx51dt?key=36423ea658138ba8b359715ea67f8b24";
+    let fired = false;
+    document.addEventListener("click", function(){
+      if(fired) return;
+      fired = true;
+      const w = window.open(POPUNDER_URL, "_blank");
+      if(w) window.focus();
+    }, { once: true, capture: true });
+  })();
 
   /* ============ Boot ============ */
   refreshNetworkHealth();
